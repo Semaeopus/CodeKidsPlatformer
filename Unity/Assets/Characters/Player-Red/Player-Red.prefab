@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 435836}
   - 212: {fileID: 21235838}
   - 95: {fileID: 9535838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_spritesheet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 58: {fileID: 5835838}
   - 50: {fileID: 5035838}
   - 82: {fileID: 8235838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player-Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,6 +171,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc4ec6fcd812be438b78701ea0419d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grounded: 0
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 513
+  movingPlatformLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  onMovingPlatform: 0
   luaFile: CharacterControl.lua
 --- !u!212 &21235838
 SpriteRenderer:
