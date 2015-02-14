@@ -376,8 +376,6 @@ GameObject:
   - 4: {fileID: 472718242}
   - 212: {fileID: 472718241}
   - 95: {fileID: 472718240}
-  - 50: {fileID: 472718244}
-  - 58: {fileID: 472718243}
   m_Layer: 0
   m_Name: Player_spritesheet
   m_TagString: Untagged
@@ -397,7 +395,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 944037f955281fd44b63ab0448195b27, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &472718241
@@ -434,32 +432,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 726378892}
   m_RootOrder: 0
---- !u!58 &472718243
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 472718239}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Radius: .104999997
-  m_Center: {x: 0, y: 0}
---- !u!50 &472718244
-Rigidbody2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 472718239}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 0
-  m_FixedAngle: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
 --- !u!1 &552034123
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +492,8 @@ GameObject:
   - 4: {fileID: 726378892}
   - 114: {fileID: 726378893}
   - 82: {fileID: 726378894}
+  - 58: {fileID: 726378896}
+  - 50: {fileID: 726378895}
   m_Layer: 0
   m_Name: Player-Blue
   m_TagString: Untagged
@@ -615,6 +589,32 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!50 &726378895
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726378891}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+--- !u!58 &726378896
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726378891}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .5
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1002432141
 GameObject:
   m_ObjectHideFlags: 0
