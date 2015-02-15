@@ -4,27 +4,28 @@ using LuaInterface;
 
 public class LuaCharacterController : MonoBehaviour {
 
+	public string luaFile = "";
+	private Lua lua;
+
 	private float maxHorizontalVelocity = 1.0f;
 	private Vector2 movement;
+
+	private Vector3 startPosition;
 
 	public bool grounded = false;
 	public LayerMask groundLayers;
 	public LayerMask movingPlatformLayers;
-
 	public bool onMovingPlatform = false;
 	private Vector3 lastPlatformPosition;
 	private Vector3 deltaPlatformPosition;
 
 	private Animator animator;
 
-	public string luaFile = "";
-	private Lua lua;
-
-
 	#region UNITY FUNCTIONS
 	// Use this for initialization
 	void Start () {
 		animator = GetComponentInChildren<Animator>();
+		startPosition = transform.position;
 		lua = new Lua();
 		lua.DoString("UnityEngine = luanet.UnityEngine");
 		lua.DoString("System = luanet.System");
@@ -40,19 +41,24 @@ public class LuaCharacterController : MonoBehaviour {
 
 		lua.DoString(string.Format("Update({0})", Time.deltaTime));
 
+		if (Input.GetKeyDown(KeyCode.UpArrow)){
+			lua.DoString(string.Format("KeyDown(\"{0}\")", "UpArrow"));
+		}
 		if (Input.GetKey(KeyCode.LeftArrow)){
 			lua.DoString(string.Format("KeyDown(\"{0}\")", "LeftArrow"));
 		}
 		if (Input.GetKey(KeyCode.RightArrow)){
 			lua.DoString(string.Format("KeyDown(\"{0}\")", "RightArrow"));
 		}
-		if (Input.GetKeyDown(KeyCode.UpArrow)){
-			lua.DoString(string.Format("KeyDown(\"{0}\")", "UpArrow"));
-		}
 
 		if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)) {
 			lua.DoString(string.Format("KeyUp(\"{0}\")", "RightArrow"));
 		}
+
+		if (!GetComponentInChildren<SpriteRenderer>().isVisible) {
+			transform.position = startPosition;
+		}
+
 	}
 
 	void FixedUpdate() {

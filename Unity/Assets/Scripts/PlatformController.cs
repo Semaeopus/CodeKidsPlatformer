@@ -10,7 +10,6 @@ public class PlatformController : MonoBehaviour {
 	public float waitLength = 2.0f;
 
 	private Vector2 nextPosition;
-	private static float targetAccuracy = 0.01f;
 	private bool atTarget = true;
 	private bool waiting = false;
 
@@ -36,7 +35,7 @@ public class PlatformController : MonoBehaviour {
 		lua.DoString(string.Format("Update({0})", Time.deltaTime));
 
 		// Move platform 
-		if (Vector3.Distance(transform.position, nextPosition) <= targetAccuracy) {
+		if ((Vector2)transform.position == nextPosition) {
 			atTarget = true;
 			if (!waiting) {
 				lua.DoString("RunNextInstruction()");

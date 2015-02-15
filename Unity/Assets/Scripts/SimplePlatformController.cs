@@ -10,7 +10,6 @@ public class SimplePlatformController : MonoBehaviour {
 	public float waitLength = 2.0f;
 
 	private Vector2 nextPosition;
-	private static float targetAccuracy = 0.01f;
 	private bool atTarget = true;
 
 	public string luaFile = "";
@@ -28,7 +27,7 @@ public class SimplePlatformController : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (Vector3.Distance(transform.position, nextPosition) <= targetAccuracy) {
+		if ((Vector2)transform.position == nextPosition) {
 			atTarget = true;
 		}
 		else {
