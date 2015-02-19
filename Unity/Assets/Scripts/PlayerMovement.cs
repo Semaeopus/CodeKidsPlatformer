@@ -77,6 +77,9 @@ public class PlayerMovement : MonoBehaviour {
 
 		anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
 
+		// If player is in air stop left right control
+		//if (!grounded) return;
+
 		// Check horizontal axis input and save to float 'move'
 		float move = Input.GetAxis ("Horizontal");
 		// set the animator parameter 'Speed' to match float 'move' above)
