@@ -34,6 +34,7 @@ public class LuaCharacterController : MonoBehaviour {
 		lua.DoFile(Application.streamingAssetsPath+"/"+luaFile);
 		lua.DoString("Start()");
 		maxHorizontalVelocity = (float)(double)lua.GetNumber("maxSpeed");
+		gameObject.GetComponent<Rigidbody2D>().mass = (float)(double)lua.GetNumber("weight");
 	}
 	
 	// Update is called once per frame

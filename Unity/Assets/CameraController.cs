@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour {
 
 
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
 
 		newCameraPos = new Vector3(cameraTarget.transform.position.x,
 			             						cameraTarget.transform.position.y, 
