@@ -5,6 +5,7 @@ using LuaInterface;
 public class LuaCharacterController : MonoBehaviour {
 
 	public string luaFile = "";
+	public string customLua = string.Empty;
 	private Lua lua;
 
 	private float maxHorizontalVelocity = 1.0f;
@@ -91,6 +92,20 @@ public class LuaCharacterController : MonoBehaviour {
 		else {
 			onMovingPlatform = false;
 		}
+	}
+
+	public CodeViewController codeView;
+	public UIController uiControl;
+	void OnMouseDown() {
+		uiControl.ToggleCodeView (true);
+		codeView.OpenCharacterScript (this.gameObject);
+	}
+
+	public void RunNewLua(string code) {
+		customLua = code;
+		lua.DoString(code);
+		maxHorizontalVelocity = (float)(double)lua.GetNumber("maxSpeed");
+		gameObject.GetComponent<Rigidbody2D>().mass = (float)(double)lua.GetNumber("weight");
 	}
 
 	#endregion
