@@ -20,6 +20,10 @@ public class PlatformController : LuaController {
 		lua.DoString("Start()");
 		nextPosition = transform.position;
 	}
+
+	public override void Reset() {
+		// Reset object to start position & settings.
+	}
 	
 
 	void Update () {

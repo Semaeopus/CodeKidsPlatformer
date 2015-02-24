@@ -49,4 +49,6 @@ public abstract class LuaController : MonoBehaviour {
 	}
 
 	public abstract void Init();
+
+	public abstract void Reset();
 }

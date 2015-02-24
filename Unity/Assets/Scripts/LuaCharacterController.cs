@@ -28,6 +28,10 @@ public class LuaCharacterController : LuaController {
 		maxHorizontalVelocity = (float)(double)lua.GetNumber("maxSpeed");
 		gameObject.GetComponent<Rigidbody2D>().mass = (float)(double)lua.GetNumber("weight");
 	}
+
+	public override void Reset() {
+		// Reset object to start position & settings.
+	}
 	
 	// Update is called once per frame
 	void Update() {

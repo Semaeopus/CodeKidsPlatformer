@@ -29,6 +29,12 @@ public class CodeViewController : MonoBehaviour {
 		DisplayLuaCode (code, target.name);
 	}
 
+	public void ResetLuaCode() {
+		LuaController controller = target.GetComponent<LuaController> ();
+		string code = File.ReadAllText(Application.streamingAssetsPath+"/"+controller.luaFile);
+		DisplayLuaCode (code, target.name);
+	}
+
 	public void OpenCharacterScript(GameObject character) {
 		Debug.Log ("DisplayCharacterCode");
 		target = character;
