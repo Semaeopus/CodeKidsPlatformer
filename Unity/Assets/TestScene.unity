@@ -12438,11 +12438,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d65c0f6e41abe14594d6da75564c658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  luaFile: MovingPlatform.lua
+  customLua: 
   movePlatform: 1
   moveSpeed: 1
   moveDistance: 1
   waitLength: 2
-  luaFile: MovingPlatform.lua
 --- !u!50 &331800673
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -13524,7 +13525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de1cd73e64246734ebd14bf3b0b0d1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  codeView: {fileID: 1950702951}
+  codeView: {fileID: 1950702955}
 --- !u!1001 &355900349
 Prefab:
   m_ObjectHideFlags: 0
@@ -50025,8 +50026,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   onMovingPlatform: 0
-  codeView: {fileID: 1950702955}
-  uiControl: {fileID: 355788660}
 --- !u!4 &1422859775
 Transform:
   m_ObjectHideFlags: 0

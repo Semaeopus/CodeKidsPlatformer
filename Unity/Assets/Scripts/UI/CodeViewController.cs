@@ -14,7 +14,19 @@ public class CodeViewController : MonoBehaviour {
 		Debug.Log ("DisplayLuaCode");
 		objectNameText.text = objectName;
 		codeView.text = code;
-		//codeText.content = code as UnityEngine.GUIContent;
+	}
+
+	public void OpenObjectCode(GameObject targetObject) {
+		target = targetObject;
+		LuaController controller = target.GetComponent<LuaController> ();
+		string code = "";
+		if (string.IsNullOrEmpty(controller.customLua)) {
+			code = File.ReadAllText(Application.streamingAssetsPath+"/"+controller.luaFile);
+		}
+		else {
+			code = controller.customLua;
+		}
+		DisplayLuaCode (code, target.name);
 	}
 
 	public void OpenCharacterScript(GameObject character) {
@@ -32,7 +44,7 @@ public class CodeViewController : MonoBehaviour {
 	}
 
 	public void CommitNewLua() {
-		LuaCharacterController controller = target.GetComponent<LuaCharacterController> ();
+		LuaController controller = target.GetComponent<LuaController> ();
 		controller.RunNewLua (codeView.text);
 		uiControl.ToggleCodeView (false);
 	}

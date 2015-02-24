@@ -3,10 +3,10 @@ using System.Collections;
 
 public class UIController : MonoBehaviour {
 
-	public GameObject codeView;
+	public CodeViewController codeView;
 
 	public void ToggleCodeView(bool enabled) {
-		codeView.SetActive (enabled);
+		codeView.gameObject.SetActive (enabled);
 	}
 
 

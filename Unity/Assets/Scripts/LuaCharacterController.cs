@@ -2,11 +2,7 @@
 using System.Collections;
 using LuaInterface;
 
-public class LuaCharacterController : MonoBehaviour {
-
-	public string luaFile = "";
-	public string customLua = string.Empty;
-	private Lua lua;
+public class LuaCharacterController : LuaController {
 
 	private float maxHorizontalVelocity = 1.0f;
 	private Vector2 movement;
@@ -23,17 +19,12 @@ public class LuaCharacterController : MonoBehaviour {
 	private Animator animator;
 
 	#region UNITY FUNCTIONS
-	// Use this for initialization
-	void Start () {
+
+	// This will run automatically in Start():
+	public override void Init() {
 		animator = GetComponentInChildren<Animator>();
 		startPosition = transform.position;
-		lua = new Lua();
-		lua.DoString("UnityEngine = luanet.UnityEngine");
-		lua.DoString("System = luanet.System");
-		lua["gameObject"] = this.gameObject;
 		lua["character"] = this;
-		lua.DoFile(Application.streamingAssetsPath+"/"+luaFile);
-		lua.DoString("Start()");
 		maxHorizontalVelocity = (float)(double)lua.GetNumber("maxSpeed");
 		gameObject.GetComponent<Rigidbody2D>().mass = (float)(double)lua.GetNumber("weight");
 	}
@@ -93,21 +84,6 @@ public class LuaCharacterController : MonoBehaviour {
 			onMovingPlatform = false;
 		}
 	}
-
-	public CodeViewController codeView;
-	public UIController uiControl;
-	void OnMouseDown() {
-		uiControl.ToggleCodeView (true);
-		codeView.OpenCharacterScript (this.gameObject);
-	}
-
-	public void RunNewLua(string code) {
-		customLua = code;
-		lua.DoString(code);
-		maxHorizontalVelocity = (float)(double)lua.GetNumber("maxSpeed");
-		gameObject.GetComponent<Rigidbody2D>().mass = (float)(double)lua.GetNumber("weight");
-	}
-
 	#endregion
 
 	#region LUA INTERFACE
