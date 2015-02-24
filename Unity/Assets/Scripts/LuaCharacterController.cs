@@ -26,7 +26,7 @@ public class LuaCharacterController : LuaController {
 		startPosition = transform.position;
 		lua["character"] = this;
 		maxHorizontalVelocity = (float)(double)lua.GetNumber("maxSpeed");
-		gameObject.GetComponent<Rigidbody2D>().mass = (float)(double)lua.GetNumber("weight");
+		gameObject.GetComponent<Rigidbody2D>().gravityScale = (float)(double)lua.GetNumber("weight");
 	}
 
 	public override void Reset() {
