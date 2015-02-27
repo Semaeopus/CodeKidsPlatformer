@@ -2,7 +2,7 @@
 using System.Collections;
 using LuaInterface;
 
-public class PlatformController : MonoBehaviour {
+public class PlatformController : LuaController {
 
 	public bool movePlatform = true;
 	public float moveSpeed = 1.0f;
@@ -13,19 +13,16 @@ public class PlatformController : MonoBehaviour {
 	private bool atTarget = true;
 	private bool waiting = false;
 
-	public string luaFile = "";
-	private Lua lua;
 	private LuaTable luaInstructions;
 
-	void Start () {
-		lua = new Lua();
-		lua.DoString("UnityEngine = luanet.UnityEngine");
-		lua.DoString("System = luanet.System");
-		lua["gameObject"] = this.gameObject;
+	public override void Init() {
 		lua["platform"] = this;
-		lua.DoFile(Application.streamingAssetsPath+"/"+luaFile);
 		lua.DoString("Start()");
 		nextPosition = transform.position;
+	}
+
+	public override void Reset() {
+		// Reset object to start position & settings.
 	}
 	
 

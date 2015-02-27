@@ -1,5 +1,6 @@
 
-maxSpeed = 1.0 
+weight = 1.0
+maxSpeed = 1.0
 moveSpeed = 0.2
 airMoveSpeed = 0.05
 jumpStrength = 3.0
