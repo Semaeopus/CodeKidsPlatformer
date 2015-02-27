@@ -46,14 +46,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - m_Motion: {fileID: 7400000, guid: 0a048b4aa2147fb4a8995a65d6972a3f, type: 2}
-    m_Threshold: -13
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_IsAnim: 1
-    m_Mirror: 0
-  - m_Motion: {fileID: 7400000, guid: 1811723a2d06732499ba71124024a83d, type: 2}
-    m_Threshold: -5
+    m_Threshold: -2
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -66,8 +59,8 @@ BlendTree:
     m_CycleOffset: 0
     m_IsAnim: 1
     m_Mirror: 0
-  - m_Motion: {fileID: 7400000, guid: b92d38f1e4751ce4494fc921e56aeac7, type: 2}
-    m_Threshold: 5
+  - m_Motion: {fileID: 7400000, guid: 1811723a2d06732499ba71124024a83d, type: 2}
+    m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -75,8 +68,8 @@ BlendTree:
     m_Mirror: 0
   m_BlendParameter: vSpeed
   m_BlendParameterY: Speed
-  m_MinThreshold: -13
-  m_MaxThreshold: 5
+  m_MinThreshold: -2
+  m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
   m_BlendType: 0
 --- !u!1101 &110127968
@@ -94,6 +87,10 @@ Transition:
   - m_ConditionMode: 1
     m_ConditionEvent: Grounded
     m_EventTreshold: 0
+    m_ExitTime: .899999976
+  - m_ConditionMode: 4
+    m_ConditionEvent: Speed
+    m_EventTreshold: .100000001
     m_ExitTime: .899999976
   m_Atomic: 1
   m_Solo: 0
@@ -133,9 +130,9 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: Speed
-    m_EventTreshold: .00100000005
+    m_EventTreshold: .100000001
     m_ExitTime: 1
-  m_Atomic: 1
+  m_Atomic: 0
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
@@ -153,9 +150,9 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: Speed
-    m_EventTreshold: .00100000005
+    m_EventTreshold: .100000001
     m_ExitTime: 1
-  m_Atomic: 1
+  m_Atomic: 0
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
@@ -185,7 +182,7 @@ State:
   m_Motions:
   - {fileID: 20640594}
   m_ParentStateMachine: {fileID: 110799660}
-  m_Position: {x: 312, y: -12, z: 0}
+  m_Position: {x: 324, y: -48, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -200,7 +197,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 15a43730732107148b0e393f807a6356, type: 2}
   m_ParentStateMachine: {fileID: 110799660}
-  m_Position: {x: 12, y: 96, z: 0}
+  m_Position: {x: 36, y: 96, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -233,5 +230,5 @@ StateMachine:
       second:
       - {fileID: 110171940}
   m_MotionSetCount: 1
-  m_AnyStatePosition: {x: 48, y: 0, z: 0}
+  m_AnyStatePosition: {x: 72, y: -24, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
