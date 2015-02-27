@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	bool grounded = false;
 	public Transform groundCheck;
-	float groundRadius = 0.2f;
+	float groundRadius = 0.5f;
 	public LayerMask whatIsGround;
 
 	public float jumpForce = 100f;
