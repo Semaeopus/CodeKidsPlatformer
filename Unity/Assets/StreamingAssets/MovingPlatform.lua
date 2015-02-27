@@ -1,4 +1,4 @@
- 
+
  options = {
 	moveSpeed = 0.5,
 	moveDistance = 0.42,
@@ -23,29 +23,26 @@
 	"down",
 	"wait",
  }
- 
+
 instructionCounter = 1
- 
+
  function Start()
 	platform:UpdateOptionsFromLua()
  end
- 
+
  function Update(dt)
- 
+
 end
 
 function RunNextInstruction()
 	nextInstruction = instructions[instructionCounter]
 	platform:Move(nextInstruction)
-	
+
 	if instructionCounter < #instructions
 	then
 		instructionCounter = instructionCounter + 1
 	else
 		instructionCounter = 1
 	end
-	
-end
- 
 
- 
+end

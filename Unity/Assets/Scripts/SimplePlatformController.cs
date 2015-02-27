@@ -2,7 +2,7 @@
 using System.Collections;
 using LuaInterface;
 
-public class SimplePlatformController : MonoBehaviour {
+public class SimplePlatformController : LuaController {
 
 	public bool movePlatform = true;
 	public float moveSpeed = 1.0f;
@@ -12,18 +12,16 @@ public class SimplePlatformController : MonoBehaviour {
 	private Vector2 nextPosition;
 	private bool atTarget = true;
 
-	public string luaFile = "";
-	private Lua lua;
 	private LuaTable luaInstructions;
 
-	void Start () {
-		lua = new Lua();
-		lua.DoFile(Application.streamingAssetsPath+"/"+luaFile);
+	public override void Init() {
 		InitOptionsFromLua();
 		luaInstructions = lua.GetTable("instructions");
 		nextPosition = transform.position;
 		StartCoroutine("MovePlatform");
+	}
 
+	public override void Reset() {
 	}
 	
 	void Update () {
