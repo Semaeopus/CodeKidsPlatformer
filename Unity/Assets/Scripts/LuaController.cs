@@ -31,10 +31,12 @@ public abstract class LuaController : MonoBehaviour {
 
 	public void OnMouseEnter() {
 		Debug.Log("Mouse over editable item");
+		GameObject.FindObjectOfType<MouseCursor> ().SetCursor (MouseCursor.CursorModes.Edit);
 	}
 
 	public void OnMouseExit() {
 		Debug.Log("Mouse left editable item");
+		GameObject.FindObjectOfType<MouseCursor> ().SetCursor (MouseCursor.CursorModes.Normal);
 	}
 
 	public void OnMouseDown() {
