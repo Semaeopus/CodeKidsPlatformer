@@ -28,18 +28,19 @@ public class PlatformController : LuaController {
 
 	void Update () {
 
-		//Update loop in Lua machine:
-		lua.DoString(string.Format("Update({0})", Time.deltaTime));
+		if (!paused) {
+			//Update loop in Lua machine:
+			lua.DoString (string.Format ("Update({0})", Time.deltaTime));
 
-		// Move platform 
-		if ((Vector2)transform.position == nextPosition) {
-			atTarget = true;
-			if (!waiting) {
-				lua.DoString("RunNextInstruction()");
+			// Move platform 
+			if ((Vector2)transform.position == nextPosition) {
+				atTarget = true;
+				if (!waiting) {
+					lua.DoString ("RunNextInstruction()");
+				}
+			} else {
+				transform.position = Vector3.MoveTowards (transform.position, nextPosition, Time.deltaTime * moveSpeed);
 			}
-		}
-		else {
-			transform.position = Vector3.MoveTowards(transform.position, nextPosition, Time.deltaTime * moveSpeed);
 		}
 	}
 

@@ -17,8 +17,20 @@ public abstract class LuaController : MonoBehaviour {
 	private CodeViewController codeView;
 	private UIController uiControl;
 
+	public bool paused = false;	
+
+	public void OnEnable() {
+		GameController.PauseGame += PauseGame;
+		GameController.UnPauseGame += UnPauseGame;
+	}
+
+	public void OnDisable() {
+		GameController.PauseGame -= PauseGame;
+		GameController.UnPauseGame -= UnPauseGame;
+	}
 
 	public void Start() {
+
 		uiControl = FindObjectOfType<UIController> ();
 		codeView = uiControl.codeView;
 		lua = new Lua();
@@ -53,4 +65,11 @@ public abstract class LuaController : MonoBehaviour {
 	public abstract void Init();
 
 	public abstract void Reset();
+
+	public void PauseGame() {
+		paused = true;
+	}
+	public void UnPauseGame() {
+		paused = false;
+	}
 }

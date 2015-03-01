@@ -35,25 +35,26 @@ public class LuaCharacterController : LuaController {
 	
 	// Update is called once per frame
 	void Update() {
+		if (!paused) {
+			lua.DoString (string.Format ("Update({0})", Time.deltaTime));
 
-		lua.DoString(string.Format("Update({0})", Time.deltaTime));
+			if (Input.GetKeyDown (KeyCode.UpArrow)) {
+				lua.DoString (string.Format ("KeyDown(\"{0}\")", "UpArrow"));
+			}
+			if (Input.GetKey (KeyCode.LeftArrow)) {
+				lua.DoString (string.Format ("KeyDown(\"{0}\")", "LeftArrow"));
+			}
+			if (Input.GetKey (KeyCode.RightArrow)) {
+				lua.DoString (string.Format ("KeyDown(\"{0}\")", "RightArrow"));
+			}
 
-		if (Input.GetKeyDown(KeyCode.UpArrow)){
-			lua.DoString(string.Format("KeyDown(\"{0}\")", "UpArrow"));
-		}
-		if (Input.GetKey(KeyCode.LeftArrow)){
-			lua.DoString(string.Format("KeyDown(\"{0}\")", "LeftArrow"));
-		}
-		if (Input.GetKey(KeyCode.RightArrow)){
-			lua.DoString(string.Format("KeyDown(\"{0}\")", "RightArrow"));
-		}
+			if (Input.GetKeyUp (KeyCode.LeftArrow) || Input.GetKeyUp (KeyCode.RightArrow)) {
+				lua.DoString (string.Format ("KeyUp(\"{0}\")", "RightArrow"));
+			}
 
-		if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)) {
-			lua.DoString(string.Format("KeyUp(\"{0}\")", "RightArrow"));
-		}
-
-		if (!GetComponentInChildren<SpriteRenderer>().isVisible) {
-			transform.position = startPosition;
+			if (!GetComponentInChildren<SpriteRenderer> ().isVisible) {
+				transform.position = startPosition;
+			}
 		}
 
 	}

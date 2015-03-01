@@ -25,11 +25,12 @@ public class SimplePlatformController : LuaController {
 	}
 	
 	void Update () {
-		if ((Vector2)transform.position == nextPosition) {
-			atTarget = true;
-		}
-		else {
-			transform.position = Vector3.MoveTowards(transform.position, nextPosition, Time.deltaTime * moveSpeed);
+		if (!paused) {
+			if ((Vector2)transform.position == nextPosition) {
+				atTarget = true;
+			} else {
+				transform.position = Vector3.MoveTowards (transform.position, nextPosition, Time.deltaTime * moveSpeed);
+			}
 		}
 	}
 

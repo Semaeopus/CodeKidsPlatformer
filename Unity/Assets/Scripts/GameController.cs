@@ -3,6 +3,11 @@ using System.Collections;
 
 public class GameController : LuaController {
 
+
+	public delegate void ChangeGameState();
+	public static event ChangeGameState PauseGame;
+	public static event ChangeGameState UnPauseGame;
+	
 	public override void Init () {
 		lua["world"] = this;
 		lua.DoString ("Start()");
@@ -19,6 +24,17 @@ public class GameController : LuaController {
 	public void SetGravity(float gravity) {
 		Debug.Log ("Changed global gravity to " + gravity);
 		Physics2D.gravity = new Vector2 (0f, -gravity);
+	}
+
+	public void SetPauseGame(bool pause) {
+		if (pause) {
+			//Time.timeScale = 0;
+			PauseGame();
+		}
+		else {
+			//Time.timeScale = 1f;
+			UnPauseGame();
+		}
 	}
 
 }

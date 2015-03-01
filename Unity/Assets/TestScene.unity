@@ -680,8 +680,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: .501075268, y: -.497647762}
-  m_SizeDelta: {x: -20, y: -13}
+  m_AnchoredPosition: {x: .250751495, y: 0}
+  m_SizeDelta: {x: -20.5009995, y: -13}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &23316602
 MonoBehaviour:
@@ -3212,6 +3212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   luaFile: PlatformInstructions.lua
   customLua: 
+  paused: 0
   movePlatform: 1
   moveSpeed: .5
   moveDistance: .419999987
@@ -3469,8 +3470,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -12.9999962, y: 12}
-  m_SizeDelta: {x: -46, y: -89}
+  m_AnchoredPosition: {x: -3, y: 12}
+  m_SizeDelta: {x: -26, y: -89}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &100967462
 MonoBehaviour:
@@ -12442,6 +12443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   luaFile: MovingPlatform.lua
   customLua: 
+  paused: 0
   movePlatform: 1
   moveSpeed: 1
   moveDistance: 1
@@ -23479,7 +23481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &661140903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50099,6 +50101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   luaFile: CharacterControl.lua
   customLua: 
+  paused: 0
   grounded: 0
   groundLayers:
     serializedVersion: 2
@@ -55231,8 +55234,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1950702951}
-        m_MethodName: SetActive
+      - m_Target: {fileID: 355788660}
+        m_MethodName: ToggleCodeView
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -71981,6 +71984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   luaFile: WorldController.lua
   customLua: 
+  paused: 0
 --- !u!212 &2063014433
 SpriteRenderer:
   m_ObjectHideFlags: 0
