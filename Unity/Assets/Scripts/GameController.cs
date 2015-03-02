@@ -29,11 +29,11 @@ public class GameController : LuaController {
 	public void SetPauseGame(bool pause) {
 		if (pause) {
 			//Time.timeScale = 0;
-			PauseGame();
+			OnPauseGame();
 		}
 		else {
 			//Time.timeScale = 1f;
-			UnPauseGame();
+			OnUnPauseGame();
 		}
 	}
 
