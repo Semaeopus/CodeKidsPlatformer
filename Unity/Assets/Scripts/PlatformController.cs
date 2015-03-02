@@ -10,7 +10,6 @@ public class PlatformController : LuaController {
 	public float waitLength = 2.0f;
 
 	private Vector2 nextPosition;
-	private bool atTarget = true;
 	private bool waiting = false;
 
 	private LuaTable luaInstructions;
@@ -34,7 +33,6 @@ public class PlatformController : LuaController {
 
 			// Move platform 
 			if ((Vector2)transform.position == nextPosition) {
-				atTarget = true;
 				if (!waiting) {
 					lua.DoString ("RunNextInstruction()");
 				}

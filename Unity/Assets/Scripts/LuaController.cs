@@ -16,21 +16,22 @@ public abstract class LuaController : MonoBehaviour {
 
 	private CodeViewController codeView;
 	private UIController uiControl;
+	private MouseCursor mouse;
 
 	public bool paused = false;	
 
 	public void OnEnable() {
-		GameController.PauseGame += PauseGame;
-		GameController.UnPauseGame += UnPauseGame;
+		GameController.OnPauseGame += PauseGame;
+		GameController.OnUnPauseGame += UnPauseGame;
 	}
 
 	public void OnDisable() {
-		GameController.PauseGame -= PauseGame;
-		GameController.UnPauseGame -= UnPauseGame;
+		GameController.OnPauseGame -= PauseGame;
+		GameController.OnUnPauseGame -= UnPauseGame;
 	}
 
 	public void Start() {
-
+		mouse = FindObjectOfType<MouseCursor> ();
 		uiControl = FindObjectOfType<UIController> ();
 		codeView = uiControl.codeView;
 		lua = new Lua();
@@ -42,13 +43,11 @@ public abstract class LuaController : MonoBehaviour {
 	}
 
 	public void OnMouseEnter() {
-		Debug.Log("Mouse over editable item");
-		GameObject.FindObjectOfType<MouseCursor> ().SetCursor (MouseCursor.CursorModes.Edit);
+		mouse.SetCursor (MouseCursor.CursorModes.Edit);
 	}
 
 	public void OnMouseExit() {
-		Debug.Log("Mouse left editable item");
-		GameObject.FindObjectOfType<MouseCursor> ().SetCursor (MouseCursor.CursorModes.Normal);
+		mouse.SetCursor (MouseCursor.CursorModes.Normal);
 	}
 
 	public void OnMouseDown() {

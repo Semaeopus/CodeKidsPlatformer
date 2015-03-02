@@ -3,21 +3,16 @@ using System.Collections;
 
 public class MouseCursor : MonoBehaviour {
 
-	public Sprite normalCursor;
-	public Sprite editCursor;
-
 	public enum CursorModes {
 		Normal,
 		Edit,
 	}
 
 	private Vector3 mouse;
-	private SpriteRenderer cursorRenderer;
 	private Animator mouseAnimator;
 
 	void Start() {
 		Screen.showCursor = false;
-		cursorRenderer = GetComponent<SpriteRenderer> ();
 		mouseAnimator = GetComponent<Animator> ();
 	}
 	
@@ -31,15 +26,12 @@ public class MouseCursor : MonoBehaviour {
 	public void SetCursor(CursorModes newMode) {
 		switch (newMode) {
 		case CursorModes.Normal:
-			//cursorRenderer.sprite = normalCursor;
 			mouseAnimator.SetTrigger("DefaultCursor");
 			break;
 		case CursorModes.Edit:
-			//cursorRenderer.sprite = editCursor;
 			mouseAnimator.SetTrigger("EditCursor");
 			break;
 		default:
-			//cursorRenderer.sprite = normalCursor;
 			mouseAnimator.SetTrigger("DefaultCursor");
 			break;
 		}

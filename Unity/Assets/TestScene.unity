@@ -51196,8 +51196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c9385d8a9410e4da450f1cf0a91c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalCursor: {fileID: 21300000, guid: 204445e74c9d6cb42bc465c70226644a, type: 3}
-  editCursor: {fileID: 21300002, guid: 204445e74c9d6cb42bc465c70226644a, type: 3}
 --- !u!95 &1457672650
 Animator:
   serializedVersion: 3
@@ -68892,7 +68890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1950702952
 RectTransform:
   m_ObjectHideFlags: 0

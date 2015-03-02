@@ -11,7 +11,6 @@ public class CodeViewController : MonoBehaviour {
 	public UnityEngine.UI.Text objectNameText;
 
 	public void DisplayLuaCode(string code, string objectName) {
-		Debug.Log ("DisplayLuaCode");
 		objectNameText.text = objectName;
 		codeView.text = code;
 	}
@@ -32,20 +31,6 @@ public class CodeViewController : MonoBehaviour {
 	public void ResetLuaCode() {
 		LuaController controller = target.GetComponent<LuaController> ();
 		string code = File.ReadAllText(Application.streamingAssetsPath+"/"+controller.luaFile);
-		DisplayLuaCode (code, target.name);
-	}
-
-	public void OpenCharacterScript(GameObject character) {
-		Debug.Log ("DisplayCharacterCode");
-		target = character;
-		LuaCharacterController controller = target.GetComponent<LuaCharacterController> ();
-		string code = "";
-		if (string.IsNullOrEmpty(controller.customLua)) {
-			code = File.ReadAllText(Application.streamingAssetsPath+"/"+controller.luaFile);
-		}
-		else {
-			code = controller.customLua;
-		}
 		DisplayLuaCode (code, target.name);
 	}
 

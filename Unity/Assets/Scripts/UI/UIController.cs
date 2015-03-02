@@ -14,7 +14,6 @@ public class UIController : MonoBehaviour {
 
 	public void ToggleCodeView(bool enabled) {
 		uiAnimator.SetBool ("EditCode", enabled);
-		//codeView.gameObject.SetActive (enabled);
 		gameController.SetPauseGame (enabled);
 	}
 

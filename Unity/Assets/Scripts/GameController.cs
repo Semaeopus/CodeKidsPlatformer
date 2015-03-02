@@ -5,8 +5,8 @@ public class GameController : LuaController {
 
 
 	public delegate void ChangeGameState();
-	public static event ChangeGameState PauseGame;
-	public static event ChangeGameState UnPauseGame;
+	public static event ChangeGameState OnPauseGame;
+	public static event ChangeGameState OnUnPauseGame;
 	
 	public override void Init () {
 		lua["world"] = this;
