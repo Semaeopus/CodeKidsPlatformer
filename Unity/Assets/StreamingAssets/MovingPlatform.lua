@@ -1,7 +1,7 @@
 
  options = {
-	moveSpeed = 0.5,
-	moveDistance = 0.42,
+	moveSpeed = 1.0,
+	moveDistance = 1.0,
 	waitTime = 2.0,
 	color = {
 		r = 1.0,

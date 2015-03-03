@@ -31,7 +31,7 @@ GameObject:
   - 82: {fileID: 8235838}
   m_Layer: 8
   m_Name: Player-Red
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .294, y: 0, z: 0}
+  m_LocalPosition: {x: -4.36999989, y: 3.6500001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 435836}
@@ -85,7 +85,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 9e08986161ec63c4b88239a3e7ce2bf4, type: 2}
   m_IsTrigger: 0
-  m_Radius: .109999999
+  m_Radius: .5
   m_Center: {x: 0, y: 0}
 --- !u!82 &8235838
 AudioSource:
@@ -171,6 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc4ec6fcd812be438b78701ea0419d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  luaFile: CharacterControl.lua
+  customLua: 
+  paused: 0
   grounded: 0
   groundLayers:
     serializedVersion: 2
@@ -179,7 +182,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   onMovingPlatform: 0
-  luaFile: CharacterControl.lua
 --- !u!212 &21235838
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1,6 +1,6 @@
 
 -- this should probably be 9.81
-gravity = 0.0
+gravity = 9.81
 
 
 function Start()
