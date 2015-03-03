@@ -4,7 +4,7 @@ using LuaInterface;
 
 /*
 	Base class for all objects that run Lua scripts
-	Handles exposing the script to UI and initilaizes the Lua machine
+	Handles exposing the script to UI and initializes the Lua machine
 */
 
 public abstract class LuaController : MonoBehaviour {

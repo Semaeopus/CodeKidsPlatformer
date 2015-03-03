@@ -10,6 +10,7 @@ public class LuaCharacterController : LuaController {
 	private Vector3 startPosition;
 
 	public bool grounded = false;
+	private float groundCheckRadius = 0.5f;
 	public LayerMask groundLayers;
 	public LayerMask movingPlatformLayers;
 	public bool onMovingPlatform = false;
@@ -23,6 +24,7 @@ public class LuaCharacterController : LuaController {
 	// This will run automatically in Start():
 	public override void Init() {
 		animator = GetComponentInChildren<Animator>();
+		groundCheckRadius = GetComponent<CircleCollider2D> ().radius;
 		startPosition = transform.position;
 		lua["character"] = this;
 		maxHorizontalVelocity = (float)(double)lua.GetNumber("maxSpeed");
@@ -62,7 +64,7 @@ public class LuaCharacterController : LuaController {
 	void FixedUpdate() {
 
 		// Check for ground:
-		grounded = Physics2D.OverlapCircle(transform.position, 0.12f, groundLayers);
+		grounded = Physics2D.OverlapCircle(transform.position, groundCheckRadius, groundLayers);
 
 		// Apply movement:
 		if (movement != Vector2.zero) {

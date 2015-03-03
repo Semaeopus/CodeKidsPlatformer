@@ -1,20 +1,20 @@
 
-weight = 1.0
-maxSpeed = 1.0
-moveSpeed = 0.2
-airMoveSpeed = 0.05
-jumpStrength = 3.0
+weight = 2.5
+maxSpeed = 5.0
+moveSpeed = 1.0
+airMoveSpeed = 0.5
+jumpStrength = 10.0
 
 running = false
 movement = {x = 0, y = 0}
-  
+
  function Start()
 	-- do this on start
  end
- 
+
 function Update(dt)
 	-- update loop
-	
+
 	-- set right animation:
 	if not character.grounded then
 		running = false
@@ -24,11 +24,11 @@ function Update(dt)
 	else
 		character:SetAnimation("Idle")
 	end
-	
+
 	-- apply movement and then reset it:
 	character:AddForce(movement.x, movement.y)
 	movement = {x = 0, y = 0}
-	
+
 end
 
 function KeyDown(key)
