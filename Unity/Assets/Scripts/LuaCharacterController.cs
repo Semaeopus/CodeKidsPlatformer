@@ -76,7 +76,7 @@ public class LuaCharacterController : LuaController {
 		movement = Vector2.zero;
 
 		// Travel with moving platforms:
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.12f, movingPlatformLayers);
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, groundCheckRadius, movingPlatformLayers);
 		if (colliders.Length > 0) {
 			if (onMovingPlatform) {
 				deltaPlatformPosition = colliders[0].transform.position - lastPlatformPosition;
