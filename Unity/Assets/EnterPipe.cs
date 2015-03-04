@@ -1,9 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnterPipe : MonoBehaviour {
+public class EnterPipe : LuaController {
 
     public int nextLevel = 1;
+
+
+	public override void Init() {
+		lua["pipe"] = this;
+	}
+
+	public override void Reset() {
+	
+	}
 
     void OnTriggerEnter2D (Collider2D col)
     {
@@ -13,8 +22,9 @@ public class EnterPipe : MonoBehaviour {
 
         // wait .. seconds and load level
         Debug.Log("loading next level");
-        Invoke("LoadNextLevel", 1);
-        
+
+        //Invoke("LoadNextLevel", 1);
+		lua.DoString("PlayerEnterPipe()");
        
 
     }

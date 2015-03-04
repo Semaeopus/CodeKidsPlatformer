@@ -3,7 +3,7 @@ weight = 2.5
 maxSpeed = 5.0
 moveSpeed = 1.0
 airMoveSpeed = 0.2
-jumpStrength = 10.0
+jumpStrength = 0.0
 
 running = false
 movement = {x = 0, y = 0}
@@ -39,8 +39,8 @@ function ButtonDown(button)
 		end
 		-- move on ground:
 		if button == "MoveLeft" then
-			movement.x = movement.x - moveSpeed
-			running = true
+			--movement.x = movement.x - moveSpeed
+			--running = true
 		elseif button == "MoveRight" then
 			movement.x = movement.x + moveSpeed
 			running = true
@@ -48,7 +48,7 @@ function ButtonDown(button)
 	else
 		-- move in air:
 		if button == "MoveLeft" then
-			movement.x = movement.x - airMoveSpeed
+			--movement.x = movement.x - airMoveSpeed
 		elseif button == "MoveRight" then
 			movement.x = movement.x + airMoveSpeed
 		end
@@ -62,7 +62,7 @@ end
 function PlayerFail()
 	-- play fail animation
 	character:SetAnimation("Fail")
-	
+
 	-- apply bounce force up from spikes
 	character:AddForce(0, 20) -- or possibly (movement.x -4, -movement.y)
 

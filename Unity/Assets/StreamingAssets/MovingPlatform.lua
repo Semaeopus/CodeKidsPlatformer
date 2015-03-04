@@ -1,7 +1,7 @@
 
  options = {
 	moveSpeed = 1.0,
-	moveDistance = 1.0,
+	moveDistance = 2.0,
 	waitTime = 2.0,
 	color = {
 		r = 1.0,
@@ -15,13 +15,17 @@
 --	possible values: "up", "right", "left", "down", "wait"
   instructions = {
 	"up",
-	"right",
-	"down",
-	"wait",
 	"up",
+   "up",
 	"left",
-	"down",
+	"left",
 	"wait",
+	"right",
+	"right",
+   "down",
+   "down",
+   "down",
+   "wait",
  }
 
 instructionCounter = 1

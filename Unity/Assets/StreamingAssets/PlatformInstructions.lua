@@ -11,12 +11,10 @@
  ]]
 
  instructions = {
-	"left",
-	"left",
-	"wait",
 	"up",
-	"right",
-	"right",
+	"up",
+	"wait",
+	"down",
 	"down",
 	"wait",
  }
