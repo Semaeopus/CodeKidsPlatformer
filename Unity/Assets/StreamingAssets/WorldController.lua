@@ -5,7 +5,7 @@ gravity = 9.81
 
 function Start()
 	-- do this on start
-   world:SetGravity(gravity)
+   -- world:SetGravity(gravity)
 end
 
 function Update(dt)

@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 435836}
   - 212: {fileID: 21235838}
-  - 95: {fileID: 9535838}
   m_Layer: 8
   m_Name: Player_spritesheet
   m_TagString: Untagged
@@ -29,6 +28,7 @@ GameObject:
   - 58: {fileID: 5835838}
   - 50: {fileID: 5035838}
   - 82: {fileID: 8235838}
+  - 95: {fileID: 9511658}
   m_Layer: 8
   m_Name: Player-Red
   m_TagString: Player
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.36999989, y: 3.6500001, z: 0}
+  m_LocalPosition: {x: -3.06999993, y: 2.86999989, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 435836}
@@ -145,13 +145,13 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!95 &9535838
+--- !u!95 &9511658
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 135836}
+  m_GameObject: {fileID: 135838}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fe47fbb8a6ef7f542b9efce8e0e56733, type: 2}
@@ -202,7 +202,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300158, guid: f685d2ff3ee8da6499c5e25f6a0bf356, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 217abe8b14aef134a84ec0784f831cb4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
