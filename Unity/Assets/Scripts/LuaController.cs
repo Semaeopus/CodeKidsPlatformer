@@ -53,6 +53,7 @@ public abstract class LuaController : MonoBehaviour {
 	public void OnMouseDown() {
 		uiControl.ToggleCodeView (true);
 		codeView.OpenObjectCode (gameObject);
+		uiControl.DisplaySpeechBubble (this.gameObject.transform, "Test: " + this.gameObject.name);
 	}
 
 	public virtual void RunNewLua(string code) {

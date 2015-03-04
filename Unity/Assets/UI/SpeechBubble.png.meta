@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: eef3c4c530af1f0448d1e153189274ee
+guid: b3518e27f5e25e34f81fa6b8e060477a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: UIBackground
+    21300000: SpeechBubble
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -23,10 +23,10 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 64
+  maxTextureSize: 128
   textureSettings:
     filterMode: 0
-    aniso: 1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -37,22 +37,22 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 150
+  spriteBorder: {x: 16, y: 24, z: 16, w: 16}
+  spritePixelsToUnits: 128
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: UIBackground
+    - name: SpeechBubble
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 6
+        y: 4
+        width: 116
+        height: 118
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 12, y: 12, z: 12, w: 12}
+      border: {x: 20, y: 38, z: 20, w: 20}
   spritePackingTag: 
   userData: 

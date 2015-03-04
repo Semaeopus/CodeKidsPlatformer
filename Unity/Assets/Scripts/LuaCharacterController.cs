@@ -92,25 +92,9 @@ public class LuaCharacterController : LuaController {
 			onMovingPlatform = false;
 		}
 	}
-
-    void PlayerFail(){
-        lua.DoString("PlayerFail()");
-    }
-
-    void PlayerRespawn(){
-
-        animator.SetBool("Fail", false);
-        movement = Vector2.zero;
-        transform.position = startPosition;
-        
-    }
-
 	#endregion
 
-
 	#region LUA INTERFACE
-
-
 	private void AddForce(float x, float y) {
 		//movement = new Vector2(x,y);
 		movement += new Vector2 (x, y);
@@ -127,9 +111,6 @@ public class LuaCharacterController : LuaController {
 		case "Jump":
 			animator.SetTrigger("Jump");
 			break;
-        case "Fail":
-            animator.SetBool("Fail", true);
-            break;
 		}
 	}
 
