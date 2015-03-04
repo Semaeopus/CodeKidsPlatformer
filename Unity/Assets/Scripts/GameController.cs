@@ -37,4 +37,11 @@ public class GameController : LuaController {
 		}
 	}
 
+	void OnTriggerEnter2D (Collider2D other) {
+		if (other.CompareTag("Player")) {
+			SetPauseGame (true);
+			FindObjectOfType<UIController>().DisplaySpeechBubble(this.gameObject.transform, "Hello?");
+		}
+	}
+
 }
