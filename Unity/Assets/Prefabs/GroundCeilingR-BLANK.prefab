@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 476562}
   - 212: {fileID: 21276562}
-  - 61: {fileID: 6176562}
+  - 60: {fileID: 6028726}
   m_Layer: 0
   m_Name: GroundCeilingR-BLANK
   m_TagString: Untagged
@@ -24,22 +24,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -1, z: 0}
+  m_LocalPosition: {x: -1, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6176562
-BoxCollider2D:
+--- !u!60 &6028726
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176562}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: e395687310417d744a5146f9ea6d4c14, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
+  m_Poly:
+    m_Paths:
+    - - {x: .277777791, y: .357142866}
+      - {x: .365079373, y: .380952388}
+      - {x: .5, y: .43650794}
+      - {x: .5, y: .5}
+      - {x: -.5, y: .5}
+      - {x: -.5, y: -.5}
+      - {x: -.40476191, y: -.5}
+      - {x: -.238095239, y: -.206349209}
+      - {x: .0317460336, y: -.095238097}
+      - {x: .095238097, y: -.0317460336}
 --- !u!212 &21276562
 SpriteRenderer:
   m_ObjectHideFlags: 1
