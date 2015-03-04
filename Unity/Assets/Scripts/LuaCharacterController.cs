@@ -40,18 +40,19 @@ public class LuaCharacterController : LuaController {
 		if (!paused) {
 			lua.DoString (string.Format ("Update({0})", Time.deltaTime));
 
-			if (Input.GetKeyDown (KeyCode.UpArrow)) {
-				lua.DoString (string.Format ("KeyDown(\"{0}\")", "UpArrow"));
+			float move = Input.GetAxis ("Horizontal");
+			if (move < -0.1) {
+				lua.DoString (string.Format ("ButtonDown(\"{0}\")", "MoveLeft"));
 			}
-			if (Input.GetKey (KeyCode.LeftArrow)) {
-				lua.DoString (string.Format ("KeyDown(\"{0}\")", "LeftArrow"));
+			else if (move > 0.1) {
+				lua.DoString (string.Format ("ButtonDown(\"{0}\")", "MoveRight"));
 			}
-			if (Input.GetKey (KeyCode.RightArrow)) {
-				lua.DoString (string.Format ("KeyDown(\"{0}\")", "RightArrow"));
+			else {
+				lua.DoString (string.Format ("ButtonUp(\"{0}\")", "MoveRight"));
 			}
 
-			if (Input.GetKeyUp (KeyCode.LeftArrow) || Input.GetKeyUp (KeyCode.RightArrow)) {
-				lua.DoString (string.Format ("KeyUp(\"{0}\")", "RightArrow"));
+			if (Input.GetButtonDown("Jump")) {
+				lua.DoString (string.Format ("ButtonDown(\"{0}\")", "Jump"));
 			}
 
 			if (!GetComponentInChildren<SpriteRenderer> ().isVisible) {
@@ -95,7 +96,8 @@ public class LuaCharacterController : LuaController {
 
 	#region LUA INTERFACE
 	private void AddForce(float x, float y) {
-		movement = new Vector2(x,y);
+		//movement = new Vector2(x,y);
+		movement += new Vector2 (x, y);
 	}
 
 	private void SetAnimation(string state) {

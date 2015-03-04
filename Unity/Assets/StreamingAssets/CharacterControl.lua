@@ -2,7 +2,7 @@
 weight = 2.5
 maxSpeed = 5.0
 moveSpeed = 1.0
-airMoveSpeed = 0.5
+airMoveSpeed = 0.2
 jumpStrength = 10.0
 
 running = false
@@ -31,30 +31,30 @@ function Update(dt)
 
 end
 
-function KeyDown(key)
+function ButtonDown(button)
 	if character.grounded then
 		-- jump:
-		if key == "UpArrow" then
+		if button == "Jump" then
 			movement.y= movement.y + jumpStrength
 		end
 		-- move on ground:
-		if key == "LeftArrow" then
+		if button == "MoveLeft" then
 			movement.x = movement.x - moveSpeed
 			running = true
-		elseif key == "RightArrow" then
+		elseif button == "MoveRight" then
 			movement.x = movement.x + moveSpeed
 			running = true
 		end
 	else
 		-- move in air:
-		if key == "LeftArrow" then
+		if button == "MoveLeft" then
 			movement.x = movement.x - airMoveSpeed
-		elseif key == "RightArrow" then
+		elseif button == "MoveRight" then
 			movement.x = movement.x + airMoveSpeed
 		end
 	end
 end
 
-function KeyUp(key)
+function ButtonUp(button)
 	running = false
 end
