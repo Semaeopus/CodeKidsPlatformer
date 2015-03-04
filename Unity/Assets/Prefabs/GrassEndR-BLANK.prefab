@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 446404}
   - 212: {fileID: 21246404}
-  - 61: {fileID: 6146404}
+  - 60: {fileID: 6073218}
   m_Layer: 0
   m_Name: GrassEndR-BLANK
   m_TagString: Untagged
@@ -24,22 +24,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6146404
-BoxCollider2D:
+--- !u!60 &6073218
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146404}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: e395687310417d744a5146f9ea6d4c14, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
+  m_Poly:
+    m_Paths:
+    - - {x: .476190478, y: -.0793650821}
+      - {x: .5, y: -.00793650839}
+      - {x: .5, y: .46825397}
+      - {x: .46825397, y: .5}
+      - {x: -.5, y: .5}
+      - {x: -.5, y: -.5}
+      - {x: -.198412701, y: -.5}
+      - {x: -.055555556, y: -.484126985}
+      - {x: .182539687, y: -.388888896}
+      - {x: .230158731, y: -.341269851}
 --- !u!212 &21246404
 SpriteRenderer:
   m_ObjectHideFlags: 1
