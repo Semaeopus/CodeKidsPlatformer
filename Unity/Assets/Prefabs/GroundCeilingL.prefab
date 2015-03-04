@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 404688}
   - 212: {fileID: 21204688}
-  - 61: {fileID: 6104688}
+  - 60: {fileID: 6010404}
   m_Layer: 0
   m_Name: GroundCeilingL
   m_TagString: Untagged
@@ -29,17 +29,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6104688
-BoxCollider2D:
+--- !u!60 &6010404
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104688}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: e395687310417d744a5146f9ea6d4c14, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1, y: 1}
-  m_Center: {x: 0, y: 0}
+  m_Poly:
+    m_Paths:
+    - - {x: -.5, y: .5}
+      - {x: -.5, y: .43650794}
+      - {x: -.261904776, y: .341269851}
+      - {x: -.095238097, y: -.0317460336}
+      - {x: -.0476190485, y: -.0793650821}
+      - {x: .111111112, y: -.142857149}
+      - {x: .373015881, y: -.373015881}
+      - {x: .43650794, y: -.5}
+      - {x: .5, y: -.5}
+      - {x: .5, y: .5}
 --- !u!212 &21204688
 SpriteRenderer:
   m_ObjectHideFlags: 1
