@@ -58,3 +58,12 @@ end
 function ButtonUp(button)
 	running = false
 end
+
+function PlayerFail()
+	-- play fail animation
+	character:SetAnimation("Fail")
+	
+	-- apply bounce force up from spikes
+	character:AddForce(0, 20) -- or possibly (movement.x -4, -movement.y)
+
+	end
