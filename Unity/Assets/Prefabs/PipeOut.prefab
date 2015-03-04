@@ -11,7 +11,7 @@ GameObject:
   - 61: {fileID: 6135620}
   - 61: {fileID: 6135618}
   - 114: {fileID: 11435618}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PipeOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 435620}
   - 212: {fileID: 21235618}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PipeMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 435622}
   - 212: {fileID: 21235620}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PipeTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Size: {x: .400000006, y: .400000006}
-  m_Center: {x: 0, y: .200000003}
+  m_Center: {x: 0, y: .300000012}
 --- !u!61 &6135620
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -121,6 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54020798b44747347abd40775b9032ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  luaFile: firstLevelPipe.lua
+  customLua: 
+  paused: 0
   nextLevel: 1
 --- !u!212 &21235618
 SpriteRenderer:
