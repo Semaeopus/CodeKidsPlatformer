@@ -43,7 +43,7 @@ public class GameController : LuaController {
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.CompareTag("Player")) {
 			speechBubble = Instantiate(SpeechBubblePrefab) as GameObject;
-			speechBubble.transform.parent = this.gameObject.transform;
+			speechBubble.transform.SetParent(this.gameObject.transform);
 			speechBubble.GetComponent<SpeechBubbleController>().DisplayText(this.gameObject.transform, "Hello there!");
 		}
 	}
