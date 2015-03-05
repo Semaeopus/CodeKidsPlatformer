@@ -11,7 +11,10 @@ public class GameController : LuaController {
 	public GameObject SpeechBubblePrefab;
 	private GameObject speechBubble;
 
+	private QuestController quest;
+
 	public override void Init () {
+		quest = GetComponent<QuestController> ();
 		lua["world"] = this;
 		lua.DoString ("Start()");
 	}
@@ -44,7 +47,8 @@ public class GameController : LuaController {
 		if (other.CompareTag("Player")) {
 			speechBubble = Instantiate(SpeechBubblePrefab) as GameObject;
 			speechBubble.transform.SetParent(this.gameObject.transform);
-			speechBubble.GetComponent<SpeechBubbleController>().DisplayText(this.gameObject.transform, "Hello there!");
+			string hint = quest.GetNextHint();
+			speechBubble.GetComponent<SpeechBubbleController>().DisplayText(this.gameObject.transform, hint);
 		}
 	}
 
@@ -52,6 +56,22 @@ public class GameController : LuaController {
 		if (other.CompareTag("Player")) {
 			speechBubble.GetComponent<SpeechBubbleController>().HideText();
 		}
+	}
+
+	public override void MouseClick() {
+		string hint = quest.GetNextHint();
+		if (!string.IsNullOrEmpty(hint)) {
+			if (!speechBubble) {
+				speechBubble = Instantiate(SpeechBubblePrefab) as GameObject;
+				speechBubble.transform.SetParent(this.gameObject.transform);
+			}
+			speechBubble.GetComponent<SpeechBubbleController>().DisplayText(this.gameObject.transform, hint);
+		}
+		else {
+			speechBubble.GetComponent<SpeechBubbleController>().HideText();
+		}
+
+
 	}
 
 

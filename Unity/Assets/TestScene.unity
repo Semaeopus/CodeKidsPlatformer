@@ -86385,15 +86385,15 @@ Prefab:
       objectReference: {fileID: 1002432145}
     - target: {fileID: 22497974, guid: b78c2134390e962498249fb5fb1f157b, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: .791000009
       objectReference: {fileID: 0}
     - target: {fileID: 22497974, guid: b78c2134390e962498249fb5fb1f157b, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22497974, guid: b78c2134390e962498249fb5fb1f157b, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b78c2134390e962498249fb5fb1f157b, type: 2}
@@ -95898,6 +95898,7 @@ GameObject:
   - 61: {fileID: 2063014435}
   - 95: {fileID: 2063014436}
   - 58: {fileID: 2063014437}
+  - 114: {fileID: 2063014438}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -95995,6 +95996,18 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_Radius: 2
   m_Center: {x: 0, y: 0}
+--- !u!114 &2063014438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063014431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3442412a0b3c05e47aaf0606d0f3a75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luaFile: Level1Scripts/Level1Quest.lua
 --- !u!1 &2063485864
 GameObject:
   m_ObjectHideFlags: 0

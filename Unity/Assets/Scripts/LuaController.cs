@@ -54,6 +54,7 @@ public abstract class LuaController : MonoBehaviour {
 		uiControl.ToggleCodeView (true);
 		codeView.OpenObjectCode (gameObject);
 		//uiControl.DisplaySpeechBubble (this.gameObject.transform, "Test: " + this.gameObject.name);
+		MouseClick ();
 	}
 
 	public virtual void RunNewLua(string code) {
@@ -63,8 +64,10 @@ public abstract class LuaController : MonoBehaviour {
 	}
 
 	public abstract void Init();
-
 	public abstract void Reset();
+
+	public virtual void MouseClick () {
+	}
 
 	public void PauseGame() {
 		paused = true;
