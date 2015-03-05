@@ -109,6 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54020798b44747347abd40775b9032ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  luaFile: 
+  customLua: 
+  paused: 0
   nextLevel: 1
 --- !u!212 &21229066
 SpriteRenderer:

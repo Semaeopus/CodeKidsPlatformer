@@ -7,7 +7,10 @@ public class GameController : LuaController {
 	public delegate void ChangeGameState();
 	public static event ChangeGameState OnPauseGame;
 	public static event ChangeGameState OnUnPauseGame;
-	
+
+	public GameObject SpeechBubblePrefab;
+	private GameObject speechBubble;
+
 	public override void Init () {
 		lua["world"] = this;
 		lua.DoString ("Start()");
@@ -39,9 +42,16 @@ public class GameController : LuaController {
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.CompareTag("Player")) {
-			SetPauseGame (true);
-			FindObjectOfType<UIController>().DisplaySpeechBubble(this.gameObject.transform, "Hello?");
+			speechBubble = Instantiate(SpeechBubblePrefab) as GameObject;
+			speechBubble.GetComponent<SpeechBubbleController>().DisplayText(this.gameObject.transform, "Hello there!");
 		}
 	}
+
+	void OnTriggerExit2D (Collider2D other) {
+		if (other.CompareTag("Player")) {
+			speechBubble.GetComponent<SpeechBubbleController>().HideText();
+		}
+	}
+
 
 }
