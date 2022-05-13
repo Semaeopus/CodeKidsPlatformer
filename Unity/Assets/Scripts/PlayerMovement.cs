@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour {
 		if((grounded || !doubleJumpUsed) && Input.GetKeyDown(KeyCode.Space))
 		{
 			anim.SetBool("Grounded", false);
-			rigidbody2D.AddForce(new Vector2(0, jumpForce));
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
 
 			if (!doubleJumpUsed && !grounded)
 			{ doubleJumpUsed = true; }
@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		if(grounded){doubleJumpUsed = false;}
 
-		anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
+		anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
 
 		// If player is in air stop left right control
 		//if (!grounded) return;
@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour {
 		anim.SetFloat("Speed", Mathf.Abs(move));
 
 		// make the rigid body's velocity match move and cap it at MaxSpeed, and set the y axis to stay at the current position
-		rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
 		if (move > 0 && !facingRight)
 		{

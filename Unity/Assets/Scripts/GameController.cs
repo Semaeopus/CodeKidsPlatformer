@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameController : LuaController {
@@ -24,7 +25,7 @@ public class GameController : LuaController {
 
 	public void RestartLevel() {
 		Debug.Log ("Reload level");
-		Application.LoadLevel(Application.loadedLevelName);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
 	public void SetGravity(float gravity) {

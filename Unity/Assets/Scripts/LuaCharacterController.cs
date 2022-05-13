@@ -69,10 +69,10 @@ public class LuaCharacterController : LuaController {
 
 		// Apply movement:
 		if (movement != Vector2.zero) {
-			if ( ((movement.x < 0) && (gameObject.rigidbody2D.velocity.x <= -maxHorizontalVelocity)) || ((movement.x > 0) && (gameObject.rigidbody2D.velocity.x >= maxHorizontalVelocity)) ) {
+			if ( ((movement.x < 0) && (gameObject.GetComponent<Rigidbody2D>().velocity.x <= -maxHorizontalVelocity)) || ((movement.x > 0) && (gameObject.GetComponent<Rigidbody2D>().velocity.x >= maxHorizontalVelocity)) ) {
 				movement.x = 0;
 			}
-			gameObject.rigidbody2D.AddForce(new Vector2(movement.x, movement.y), ForceMode2D.Impulse);
+			gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(movement.x, movement.y), ForceMode2D.Impulse);
 		}
 		movement = Vector2.zero;
 

@@ -12,7 +12,7 @@ public class MouseCursor : MonoBehaviour {
 	private Animator mouseAnimator;
 
 	void Start() {
-		Screen.showCursor = false;
+		Cursor.visible = false;
 		mouseAnimator = GetComponent<Animator> ();
 	}
 	
